@@ -4,6 +4,8 @@ weather_lv = HTTP.get("https://api.openweathermap.org/data/2.5/weather?q=las%20v
 
 weather_gu = HTTP.get("https://api.openweathermap.org/data/2.5/weather?q=guam&appid=#{ENV["OPEN_WEATHER_API_KEY"]}&units=imperial")
 
+weather_slc = HTTP.get("https://api.openweathermap.org/data/2.5/weather?q=salt%20lake%20city&appid=#{ENV["OPEN_WEATHER_API_KEY"]}&units=imperial")
+
 # pp weather_lv.parse(:json)
 name1 = weather_lv.parse(:json)["name"]
 cTemp1 = weather_lv.parse(:json)["main"]["temp"]
@@ -21,3 +23,12 @@ hTemp2 = weather_gu.parse(:json)["main"]["temp_max"]
 fTemp2 = weather_gu.parse(:json)["main"]["feels_like"]
 
 puts "Currently in #{name2} it's #{cTemp2} degrees but it feels like #{fTemp2} and the max for today is #{hTemp2} degreesand then min for today is #{lTemp2} degrees."
+
+# pp weather_slc.parse(:json)
+name3 = weather_slc.parse(:json)["name"]
+cTemp3 = weather_slc.parse(:json)["main"]["temp"]
+lTemp3 = weather_slc.parse(:json)["main"]["temp_min"]
+hTemp3 = weather_slc.parse(:json)["main"]["temp_max"]
+fTemp3 = weather_slc.parse(:json)["main"]["feels_like"]
+
+puts "Currently in #{name3} it's #{cTemp3} degrees but it feels like #{fTemp3} and the max for today is #{hTemp3} degreesand then min for today is #{lTemp3} degrees."
