@@ -7,3 +7,7 @@ GET https://data.cityofchicago.org/resource/xzkq-xp2w.json
 ###
 
 GET https://data.ny.gov/resource/xjya-f8ng.json
+
+###
+
+GET https://api.openweathermap.org/data/2.5/weather?q=chicago&units=imperial&appid=_____
