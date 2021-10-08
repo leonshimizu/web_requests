@@ -1,10 +1,11 @@
 require 'http'
 
-puts "Enter any city and I'll tell you their current forecast:" 
+puts "Enter any city and then your preferred units of measurement (imperial, metric, standard) and I'll tell you their current forecast:" 
 
 location = gets.chomp
+units = gets.chomp
 
-weather = HTTP.get("https://api.openweathermap.org/data/2.5/weather?q=#{location}&appid=#{ENV["OPEN_WEATHER_API_KEY"]}&units=imperial")
+weather = HTTP.get("https://api.openweathermap.org/data/2.5/weather?q=#{location}&appid=#{ENV["OPEN_WEATHER_API_KEY"]}&units=#{units}")
 
 p weather.parse(:json)["name"]
 p weather.parse(:json)["weather"][0]["description"]
