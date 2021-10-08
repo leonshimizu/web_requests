@@ -3,6 +3,7 @@ require 'http'
 def current_weather
 
   puts "Welcome! This is a weather app, if you'd like to continue, please type anything, if you'd like to cancel, please type 'done':"
+  
   continue = gets.chomp
 
   while continue.downcase != "done"
@@ -24,7 +25,7 @@ def current_weather
 
     p "In #{name}, the current temperature in #{units} is #{temp} degrees but it feels like #{feels} degrees. The minimum temperature is #{min} and the maximum is #{max}. The description of the weather is #{desc} and the humidity is at #{humidity} with a wind speed of #{speed}."
 
-    puts "*" * 50
+    puts "-" * 50
 
     puts "If you'd like to continue, type anything, if you'd like to stop, type 'done':"
 
@@ -34,3 +35,6 @@ def current_weather
 end
 
 current_weather
+
+# create conditional that checks if the location typed in is valid
+# create conditional that checks if the unit of measurement is valid
