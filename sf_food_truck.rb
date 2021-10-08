@@ -1,7 +1,8 @@
 require 'http'
 
-list = HTTP.get("https://data.sfgov.org/resource/jjew-r69b.json")
+food_trucks = HTTP.get("https://data.sfgov.org/resource/jjew-r69b.json")
 
-sf_food_truck1 = list.parse(:json)[0]["applicant"]
+name1 = food_trucks.parse(:json)[0]["applicant"]
+open1 = food_trucks.parse(:json)[0]["start24"]
 
-p "The first food truck in the list of SF Food Trucks is #{sf_food_truck1}."
+p "The first food truck in the list of SF Food Trucks is #{name1} and they open at #{open1}."
