@@ -3,11 +3,12 @@ require 'http'
 def current_weather
 
   puts "Welcome! This is a weather app, if you'd like to continue, please type anything, if you'd like to cancel, please type 'done':"
-  
+
   continue = gets.chomp
 
   while continue.downcase != "done"
-    puts "Enter any city and then your preferred units of measurement (imperial, metric, standard) and I'll tell you their current forecast:" 
+    puts "Enter any city and then your preferre
+    d units of measurement (imperial, metric, standard) and I'll tell you their current forecast:" 
     
     location = gets.chomp
     units = gets.chomp
