@@ -20,7 +20,7 @@ def find_something_to_do
       puts "#{activity}! This is a #{type} type of activity and requires a minimum of #{people} person."
     end
 
-    puts "If you'd like to get another random activity type anything, if you're happy with that activity, type 'nothing' or 'done'"
+    puts "If you'd like to get another random activity type anything, if you're happy with that activity, type 'done'"
 
     continue = gets.chomp
   end
