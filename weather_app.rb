@@ -3,7 +3,7 @@ require 'http'
 def current_weather
 
   puts "Welcome! This is a weather app, if you'd like to continue, please type anything, if you'd like to cancel, please type 'done':"
-  
+
   continue = gets.chomp
 
   while continue.downcase != "done"
@@ -12,18 +12,19 @@ def current_weather
     location = gets.chomp
     units = gets.chomp
 
-    weather = HTTP.get("https://api.openweathermap.org/data/2.5/weather?q=#{location}&appid=#{ENV["OPEN_WEATHER_API_KEY"]}&units=#{units}")
+    link = HTTP.get("https://api.openweathermap.org/data/2.5/weather?q=#{location}&appid=#{ENV["OPEN_WEATHER_API_KEY"]}&units=#{units}")
+    weather_link = link.parse(:json)
 
-    name = weather.parse(:json)["name"]
-    desc = weather.parse(:json)["weather"][0]["description"]
-    temp = weather.parse(:json)["main"]["temp"]
-    feels = weather.parse(:json)["main"]["feels_like"]
-    min = weather.parse(:json)["main"]["temp_min"]
-    max = weather.parse(:json)["main"]["temp_max"]
-    humidity = weather.parse(:json)["main"]["humidity"]
-    speed = weather.parse(:json)["wind"]["speed"]
+    name = weather_link["name"]
+    description = weather_link["weather"][0]["description"]
+    temperature = weather_link["main"]["temp"]
+    feels_like = weather_link["main"]["feels_like"]
+    min_temperature = weather_link["main"]["temp_min"]
+    max_temperature = weather_link["main"]["temp_max"]
+    humidity = weather_link["main"]["humidity"]
+    wind_speed = weather_link["wind"]["speed"]
 
-    p "In #{name}, the current temperature in #{units} is #{temp} degrees but it feels like #{feels} degrees. The minimum temperature is #{min} and the maximum is #{max}. The description of the weather is #{desc} and the humidity is at #{humidity} with a wind speed of #{speed}."
+    p "In #{name}, the current temperature in #{units} is #{temperature} degrees but it feels like #{feels_like} degrees. The minimum temperature is #{min_temperature} and the maximum is #{max_temperature}. The description of the weather is #{description} and the humidity is at #{humidity} with a wind speed of #{wind_speed}."
 
     puts "-" * 50
 
