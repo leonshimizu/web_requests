@@ -1,8 +1,19 @@
 require 'http'
 
-bored = HTTP.get("http://www.boredapi.com/api/activity?")
+def find_something_to_do
+  
+  puts "Hey! If you're here, you must be bored, so let's find you something to do! If you'd like to continue, type anything, if you'd like to go back to doing nothing, type 'nothing':"
 
-pp bored.parse(:json)
+  continue = gets.chomp
+
+
+  bored = HTTP.get("http://www.boredapi.com/api/activity?")
+
+  pp bored.parse(:json)["activity"]
+  pp bored.parse(:json)["type"]
+  pp bored.parse(:json)["participants"]
+
+end
 
 
 
