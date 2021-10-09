@@ -7,8 +7,7 @@ def current_weather
   continue = gets.chomp
 
   while continue.downcase != "done"
-    puts "Enter any city and then your preferre
-    d units of measurement (imperial, metric, standard) and I'll tell you their current forecast:" 
+    puts "Enter any city and then your preferred units of measurement (imperial, metric, standard) and I'll tell you their current forecast:" 
     
     location = gets.chomp
     units = gets.chomp
