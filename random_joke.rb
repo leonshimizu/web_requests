@@ -81,3 +81,4 @@ random_joke
 # allow the user to search for a specific topic
 # allow the user to choose between the single jokes and two part jokes
 # allow the user to select other flags to blacklist 
+# https://sv443.net/jokeapi/v2/ - JokeAPI Documentation
