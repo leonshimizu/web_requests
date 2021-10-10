@@ -59,3 +59,9 @@ def random_joke
 end
 
 random_joke
+
+# extras:
+# allow the user to choose how many jokes they see at one time
+# allow the user to search for a specific topic
+# allow the user to choose between the single jokes and two part jokes
+# allow the user to select other flags to blacklist 
