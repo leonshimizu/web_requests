@@ -12,13 +12,9 @@ def random_joke
     puts "Programming, Pun, Spook, Christmas, or All (Please only 1 selection)"
 
     choice = gets.chomp
-    link = HTTP.get("https://v2.jokeapi.dev/joke/#{choice}")
-    joke_link = link.parse(:json)
-
 
     if choice.downcase == "all"
-      link = HTTP.get("https://v2.jokeapi.dev/joke/Programming,Pun,Spooky,Christmas")
-      joke_link = link.parse(:json)
+      joke_link = HTTP.get("https://v2.jokeapi.dev/joke/Programming,Pun,Spooky,Christmas?blacklistFlags=religious").parse(:json)
       joke = joke_link["joke"]
       category = joke_link["category"]
       setup = joke_link["setup"]
@@ -36,8 +32,7 @@ def random_joke
         puts delivery
       end
     else 
-      link = HTTP.get("https://v2.jokeapi.dev/joke/#{choice}")
-      joke_link = link.parse(:json)
+      joke_link = HTTP.get("https://v2.jokeapi.dev/joke/#{choice}?blacklistFlags=religious").parse(:json)
       joke = joke_link["joke"]
       category = joke_link["category"]
       setup = joke_link["setup"]
