@@ -7,6 +7,15 @@ def find_something_to_do
   continue = gets.chomp
 
   while continue.downcase != "done"
+
+    # puts "If you have a specific type of activity in mind, please choose one of the following options, if not, type 'all':"
+    # puts "Choices: education, recreational, social, diy, charity, cooking, relaxation, music, busywork, or all"
+
+    # choice = gets.chomp
+
+    # if choice.downcase == "all"
+    #   choice == ""
+
     puts "Great! So your activity of the day is ..."
     link = HTTP.get("http://www.boredapi.com/api/activity?")
     bored_link = link.parse(:json)
@@ -28,3 +37,9 @@ def find_something_to_do
 end
 
 find_something_to_do
+
+# "education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"
+
+# http://www.boredapi.com/api/activity?type=
+
+# add code for the user to choose what type of activity 
