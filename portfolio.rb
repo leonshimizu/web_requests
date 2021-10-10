@@ -11,4 +11,11 @@ elsif selection.downcase == "random joke generator"
   require_relative 'random_joke.rb'
 elsif selection.downcase == "random activity generator"
   require_relative 'bored.rb'
+elsif selection.downcase == "meal chooser"
+  require_relative 'food.rb'
 end
+
+
+# how would I link a file from a different folder (food.rb - in actualize but in an entirely different folder)
+# create website to display portfolio
+# continue to add to each file to make it more complex and/or easier to use
