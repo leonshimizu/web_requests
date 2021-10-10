@@ -6,7 +6,7 @@ puts "Please select one:"
 selection = gets.chomp
 
 if selection.downcase == "current weather"
-  require_relative 'current_weather.rb'
+  require_relative 'weather_app.rb'
 elsif selection.downcase == "random joke generator"
   require_relative 'random_joke.rb'
 end
