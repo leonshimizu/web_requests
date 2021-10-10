@@ -76,6 +76,7 @@ end
 random_joke
 
 # extras:
+# make the joke_link variable at the top and reference it so that long line isn't used more than once
 # allow the user to choose how many jokes they see at one time
 # allow the user to search for a specific topic
 # allow the user to choose between the single jokes and two part jokes
