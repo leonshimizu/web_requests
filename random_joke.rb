@@ -14,46 +14,61 @@ def random_joke
     choice = gets.chomp
 
     if choice.downcase == "all"
+
       joke_link = HTTP.get("https://v2.jokeapi.dev/joke/Programming,Pun,Spooky,Christmas?blacklistFlags=religious").parse(:json)
       joke = joke_link["joke"]
       category = joke_link["category"]
       setup = joke_link["setup"]
       delivery = joke_link["delivery"]
       type = joke_link["type"]
+
       if joke_link["type"] == "single"
+
         puts "-" * 50
         puts "Here's a #{category} joke:"
         puts joke
+
       elsif joke_link["type"] == "twopart"
+
         puts "-" * 50
         puts "Here's a #{category} joke (it's a two part joke):"
         puts setup
         gets.chomp
         puts delivery
+
       end
+
     else 
+
       joke_link = HTTP.get("https://v2.jokeapi.dev/joke/#{choice}?blacklistFlags=religious").parse(:json)
       joke = joke_link["joke"]
       category = joke_link["category"]
       setup = joke_link["setup"]
       delivery = joke_link["delivery"]
       type = joke_link["type"]
+
       if joke_link["type"] == "single"
+
         puts "-" * 50
         puts "Here's a #{category} joke:"
         puts joke
+
       elsif joke_link["type"] == "twopart"
+
         puts "-" * 50
         puts "Here's a #{category} joke (it's a two part joke):"
         puts setup
         gets.chomp
-        puts delivery
+        puts delivery 
+        
       end
     end
+
     puts "-" * 50
     puts "To generate another joke, type anything. To exit, type 'done':"
 
     continue = gets.chomp
+
   end
 
 end
