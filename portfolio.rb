@@ -1,6 +1,6 @@
 puts "Welcome! Here are all the main applications I've created:"
 puts "-" * 50
-puts "Random Joke Generator, Current Weather, Random Activity Generator"
+puts "Random Joke Generator, Current Weather, Random Activity Generator, Meal Chooser"
 puts "Please select one:"
 
 selection = gets.chomp
@@ -12,7 +12,7 @@ elsif selection.downcase == "random joke generator"
 elsif selection.downcase == "random activity generator"
   require_relative 'bored.rb'
 elsif selection.downcase == "meal chooser"
-  require_relative 'food.rb'
+  require_relative 'food_copy.rb'
 end
 
 
